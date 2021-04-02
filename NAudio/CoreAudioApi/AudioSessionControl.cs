@@ -174,6 +174,17 @@ namespace NAudio.CoreAudioApi
         }
 
         /// <summary>
+        /// Enables or disables the default stream attenuation experience (auto-ducking) provided by the system.
+        /// </summary>
+        /// <param name="optOut">A variable that enables or disables system auto-ducking.</param>
+        /// <returns>An HRESULT code indicating whether the operation succeeded of failed.</returns>
+        public int SetDuckingPreference(bool optOut)
+        {
+            if (audioSessionControlInterface2 == null) throw new InvalidOperationException("Not supported on this version of Windows");
+            return audioSessionControlInterface2.SetDuckingPreference(optOut);
+        }
+
+        /// <summary>
         /// the grouping param for an audio session grouping
         /// </summary>
         /// <returns></returns>
