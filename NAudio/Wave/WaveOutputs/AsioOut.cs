@@ -108,7 +108,7 @@ namespace NAudio.Wave
         /// <returns>an array of driver names</returns>
         public static string[] GetDriverNames()
         {
-            return AsioDriver.GetAsioDriverNames();
+            throw new NotImplementedException("Removed by lbayes due to incompatible .NET deps");
         }
 
         /// <summary>
@@ -130,12 +130,15 @@ namespace NAudio.Wave
         {
             this.driverName = driverName;
 
+            throw new NotImplementedException("Removed by lbayes due to incompatible .NET deps");
+            /*
             // Get the basic driver
             AsioDriver basicDriver = AsioDriver.GetAsioDriverByName(driverName);
 
             // Instantiate the extended driver
             driver = new AsioDriverExt(basicDriver);
             this.ChannelOffset = 0;
+            */
         }
 
         /// <summary>
